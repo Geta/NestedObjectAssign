@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "tests": "mocha tests --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",

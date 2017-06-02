@@ -1,3 +1,5 @@
 # NestedObjectAssign
+This package extends the functionality given by Object.assign() to also include the values of nested objects.
 
-Package that is created to give functionality which merges nested properties, which currently Object.Assign does not support.
+## Tests
+Tests are done using mocha. to run tests, simply type `npm run tests`.

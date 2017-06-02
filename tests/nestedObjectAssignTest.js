@@ -42,10 +42,10 @@ var test = function(){
 
 describe('Object', function() {
     describe('nestedObjectAssign', function() {
-        it('should return true when values are equal', function() {
+        it('Return true when objects & values are equal', function() {
             var mergedData = nestedObjectAssign({}, mockData.default, mockData.first, mockData.second);
 
-            assert.equal(mergedData, expectedData);
+            assert.equal(JSON.stringify(mergedData), JSON.stringify(expectedData));
         })
     })
 });
