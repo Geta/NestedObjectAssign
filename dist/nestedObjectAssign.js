@@ -68,56 +68,85 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = nestedAssign;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isObject__ = __webpack_require__(1);
 
 
-function nestedAssign(target, ...sources) {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = nestedObjectAssign;
+
+var _isObject = __webpack_require__(1);
+
+var _isObject2 = _interopRequireDefault(_isObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function nestedObjectAssign(target) {
+    for (var _len = arguments.length, sources = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        sources[_key - 1] = arguments[_key];
+    }
+
     if (!sources.length) return target;
 
-    const source = sources.shift();
+    var source = sources.shift();
 
-    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__isObject__["a" /* default */])(target) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__isObject__["a" /* default */])(source)) {
-        for (const key in source) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__isObject__["a" /* default */])(source[key])) {
-                if (!target[key]) Object.assign(target, { [key]: {} });
+    if ((0, _isObject2.default)(target) && (0, _isObject2.default)(source)) {
+        for (var key in source) {
+            if ((0, _isObject2.default)(source[key])) {
+                if (!target[key]) Object.assign(target, _defineProperty({}, key, {}));
 
-                nestedAssign(target[key], source[key]);
+                nestedObjectAssign(target[key], source[key]);
             } else {
-                Object.assign(target, { [key]: source[key] });
+                Object.assign(target, _defineProperty({}, key, source[key]));
             }
         }
     }
 
-    return nestedAssign(target, ...sources);
+    return nestedObjectAssign.apply(undefined, [target].concat(sources));
 }
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = isObject;
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.default = isObject;
 function isObject(item) {
-    return item && typeof item === 'object' && !Array.isArray(item);
+    return item && (typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object' && !Array.isArray(item);
 }
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["default"] = NestedAssign;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_nestedAssign__ = __webpack_require__(0);
 
 
-function NestedAssign(target, ...sources) {
-    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__components_nestedAssign__["a" /* default */])(target, ...sources);
-}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _nestedObjectAssign = __webpack_require__(0);
+
+Object.defineProperty(exports, 'nestedObjectAssign', {
+  enumerable: true,
+  get: function get() {
+    return _nestedObjectAssign.nestedObjectAssign;
+  }
+});
 
 /***/ })
 /******/ ]);

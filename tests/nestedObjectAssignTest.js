@@ -1,5 +1,5 @@
 var assert = require('assert');
-import nestedObjectAssign from '../src/index';
+import nestedObjectAssign from '../dist/nestedObjectAssign';
 
 var mockData = {
     default: {
@@ -21,7 +21,7 @@ var mockData = {
         }
     }
 
-}
+};
 
 var expectedData = {
     heading: 'title',
@@ -32,13 +32,7 @@ var expectedData = {
         header: 'header',
         heading2: 'h2'
     }
-}
-
-var test = function(){
-    var mergedData = nestedObjectAssign({}, mockData.default, mockData.first, mockData.second);
-
-    return mergedData === expectedData;
-}
+};
 
 describe('Object', function() {
     describe('nestedObjectAssign', function() {

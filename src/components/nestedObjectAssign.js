@@ -1,6 +1,6 @@
 import isObject from './isObject';
 
-export default function nestedAssign(target, ...sources){
+export default function nestedObjectAssign(target, ...sources){
     if (!sources.length)
         return target;
 
@@ -12,7 +12,7 @@ export default function nestedAssign(target, ...sources){
                 if (!target[key])
                     Object.assign(target, {[key]: {}});
 
-                nestedAssign(target[key], source[key]);
+                nestedObjectAssign(target[key], source[key]);
             }
             else {
                 Object.assign(target, {[key]: source[key]});
@@ -20,5 +20,5 @@ export default function nestedAssign(target, ...sources){
         }
     }
 
-    return nestedAssign(target, ...sources);
+    return nestedObjectAssign(target, ...sources);
 }

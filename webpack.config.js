@@ -6,14 +6,17 @@ module.exports = {
     entry: './index',
     output: {
         path: path.resolve('dist'),
-        filename: 'nested-object.assign.js'
+        filename: 'nestedObjectAssign.js'
     },
     module:{
         loaders: [
             {
                 test: /\.js$/,
                 exclude: [/node_modules/, /dist/],
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     },

@@ -2,7 +2,7 @@
   "name": "nested-object.assign",
   "version": "1.0.0",
   "description": "method for allowing nested objects to be merged, which object.assign doesn't currently support",
-  "main": "dist/nested-object.assign.js",
+  "main": "dist/nestedObjectAssign.js",
   "directories": {
     "test": "test"
   },
