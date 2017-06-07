@@ -1,6 +1,6 @@
 {
-  "name": "nestedObjectAssign",
-  "version": "1.0.3",
+  "name": "nested-object-assign",
+  "version": "1.0.0",
   "description": "Package to support nested merging of objects & properties, using Object.Assign",
   "main": "./index.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://github.com/Geta/NestedObjectAssignl",
+  "homepage": "https://github.com/Geta/NestedObjectAssign",
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-core": "^6.4.0",
