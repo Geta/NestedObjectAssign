@@ -1,4 +1,4 @@
-import isObject from './isObject';
+import {isObject} from './isObject';
 
 export default function nestedObjectAssign(target, ...sources){
     if (!sources.length)

@@ -1,30 +1,79 @@
 {
-  "name": "nested-object.assign",
-  "version": "1.0.0",
-  "description": "method for allowing nested objects to be merged, which object.assign doesn't currently support",
-  "main": "dist/nestedObjectAssign.js",
-  "directories": {
-    "test": "test"
-  },
+  "name": "nestedObjectAssign",
+  "version": "1.0.3",
+  "description": "Package to support nested merging of objects & properties, using Object.Assign",
+  "main": "./index.js",
   "scripts": {
-    "tests": "mocha tests --compilers js:babel-core/register"
+    "prepublish": "npm run build-all",
+    "preversion": "npm run build-all && npm run unit",
+    "version": "git add .",
+    "postversion": "git push && git push --tags",
+    "build": "gulp build",
+    "build-dev": "gulp build-dev",
+    "build-web": "gulp build-web",
+    "build-web-dev": "gulp build-web-dev",
+    "build-all": "gulp",
+    "unit": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
+    "unit-watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
+    "test": "npm run unit-watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Geta/NestedObjectAssign.git"
+    "url": "https://github.com/Geta/NestedObjectAssign.git"
   },
-  "author": "Eirik Horvath",
-  "license": "ISC",
+  "keywords": [
+    "es6",
+    "npm",
+    "nested",
+    "object",
+    "assign"
+  ],
+  "author": {
+    "name": "Geta AS / Eirik Horvath",
+    "url": "https://github.com/Geta"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Geta/NestedObjectAssign/issues"
   },
-  "homepage": "https://github.com/Geta/NestedObjectAssign#readme",
+  "files": [
+    "README.md",
+    "index.js",
+    "lib",
+    "dist"
+  ],
+  "homepage": "https://github.com/Geta/NestedObjectAssignl",
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-es2015": "^6.24.1",
-    "mocha": "^3.4.2",
-    "webpack": "^2.6.1"
+    "babel": "^6.3.26",
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "^3.4.1",
+    "clean-webpack-plugin": "^0.1.8",
+    "del": "^2.2.0",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
+    "eslint-loader": "^1.2.0",
+    "eslint-plugin-react": "^3.16.1",
+    "eslint-plugin-standard": "^1.3.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-env": "^0.2.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "mocha": "^2.3.4",
+    "object-assign": "^4.0.1",
+    "webpack": "^1.12.11",
+    "webpack-node-externals": "^0.4.1"
+  },
+  "library": {
+    "name": "nestedObjectAssign",
+    "entry": "nestedObjectAssign.js",
+    "dist-node": "nestedObjectAssign.js",
+    "dist-web": "nestedObjectAssign.web.js",
+    "bundle-node": true
   }
 }

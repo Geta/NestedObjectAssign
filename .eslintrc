@@ -1,0 +1,56 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "classes": true,
+    "modules": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [
+      1,
+      4
+    ],
+    "linebreak-style": [
+      2,
+      "windows"
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "strict": [
+      1,
+      "function"
+    ],
+    "no-console": 0,
+    "no-unused-vars": [
+      1
+    ]
+  },
+  "globals" : {
+    "document": false,
+    "escape": false,
+    "navigator": false,
+    "unescape": false,
+    "window": false,
+    "describe": true,
+    "before": true,
+    "it": true,
+    "expect": true,
+    "sinon": true
+  }
+}

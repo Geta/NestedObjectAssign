@@ -1,5 +1,5 @@
-var assert = require('assert');
-import nestedObjectAssign from '../dist/nestedObjectAssign';
+import { expect } from 'chai';
+import nestedObjectAssign from '../index.js';
 
 var mockData = {
     default: {
@@ -34,12 +34,10 @@ var expectedData = {
     }
 };
 
-describe('Object', function() {
-    describe('nestedObjectAssign', function() {
-        it('Return true when objects & values are equal', function() {
-            var mergedData = nestedObjectAssign({}, mockData.default, mockData.first, mockData.second);
-
-            assert.equal(JSON.stringify(mergedData), JSON.stringify(expectedData));
-        })
-    })
+describe('Given an instance of nestedObjectAssign', function() {
+    describe('when i merge the mockData', function() {
+        it('it should be equal to expectedData', () => {
+            expect(JSON.stringify(nestedObjectAssign({}, mockData.default, mockData.first, mockData.second))).to.be.equal(JSON.stringify(expectedData));
+        });
+    });
 });
