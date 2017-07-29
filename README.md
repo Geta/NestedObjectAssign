@@ -1,5 +1,6 @@
 # NestedObjectAssign
 [![Build Status](https://travis-ci.org/Geta/NestedObjectAssign.svg?branch=master)](https://travis-ci.org/Geta/NestedObjectAssign)
+[![dependencies Status](https://david-dm.org/geta/NestedObjectAssign/status.svg)](https://david-dm.org/geta/NestedObjectAssign)
 
 This package extends the functionality given by Object.assign() to also include the values of nested objects.
 
