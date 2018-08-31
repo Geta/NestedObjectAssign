@@ -1,6 +1,6 @@
 {
   "name": "nested-object-assign",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Package to support nested merging of objects & properties, using Object.Assign",
   "main": "./index.js",
   "scripts": {
