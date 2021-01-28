@@ -9,7 +9,7 @@ export default function nestedObjectAssign(target, ...sources){
 
     if (isObject(target) && isObject(source)){
         for (const key in source){
-            if (isObject(source[key])){
+            if (isObject(source[key]) && !isPrototypePolluted(key)){
                 if (!target[key]) {
                     Object.assign(target, {[key]: {}});
                 }
@@ -28,4 +28,8 @@ export default function nestedObjectAssign(target, ...sources){
     }
 
     return nestedObjectAssign(target, ...sources);
+}
+
+function isPrototypePolluted(key){
+    return /__proto__|constructor|prototype/.test(key);
 }

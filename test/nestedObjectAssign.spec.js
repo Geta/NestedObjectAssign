@@ -69,4 +69,10 @@ describe('Given an instance of nestedObjectAssign', function() {
             expect(JSON.stringify(nestedObjectAssign({}, mockData.default, mockData.first, mockData.second))).to.be.equal(JSON.stringify(expectedData));
         });
     });
+    describe('when I give malicious payload', function() {
+        it('it should not pollute object prototype', () => {
+            nestedObjectAssign({}, JSON.parse('{"__proto__": {"polluted": true}}'));
+            expect({}.polluted).to.be.equal(undefined);
+        });
+    });
 });
